@@ -1,4 +1,4 @@
-package api.everis.DTO;
+package api.everis.main.DTO;
 
 public abstract class BaseDTO {
 	

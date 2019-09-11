@@ -1,4 +1,4 @@
-package api.everis.Entity;
+package api.everis.main.Entity;
 
 import java.util.ArrayList;
 import java.util.List;

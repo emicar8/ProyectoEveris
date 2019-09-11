@@ -1,4 +1,4 @@
-package api.everis.Service;
+package api.everis.main.Service;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -9,9 +9,9 @@ import javax.transaction.Transactional;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 
-import api.everis.DTO.PlanetDTO;
-import api.everis.Entity.Planet;
-import api.everis.Repository.PlanetRepository;
+import api.everis.main.DTO.PlanetDTO;
+import api.everis.main.Entity.Planet;
+import api.everis.main.Repository.PlanetRepository;
 
 @Service
 public class PlanetService {

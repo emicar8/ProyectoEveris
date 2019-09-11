@@ -1,4 +1,4 @@
-package api.everis.Controller;
+package api.everis.main.Controller;
 
 import java.util.List;
 
@@ -15,9 +15,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-
-import api.everis.DTO.PlanetDTO;
-import api.everis.Service.PlanetService;
+import api.everis.main.DTO.PlanetDTO;
+import api.everis.main.Service.PlanetService;
 
 @Controller
 @RestController

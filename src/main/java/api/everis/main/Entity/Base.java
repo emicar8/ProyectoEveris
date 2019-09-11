@@ -1,4 +1,4 @@
-package api.everis.Entity;
+package api.everis.main.Entity;
 
 import javax.persistence.Column;
 import javax.persistence.GeneratedValue;

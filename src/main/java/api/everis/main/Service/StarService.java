@@ -1,4 +1,4 @@
-package api.everis.Service;
+package api.everis.main.Service;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -8,9 +8,9 @@ import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import api.everis.DTO.StarDTO;
-import api.everis.Entity.Star;
-import api.everis.Repository.StarRepository;
+import api.everis.main.DTO.StarDTO;
+import api.everis.main.Entity.Star;
+import api.everis.main.Repository.StarRepository;
 
 @Service
 public class StarService {
