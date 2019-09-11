@@ -55,9 +55,9 @@ public class PlanetController {
 		
 	}
 	
-	@PostMapping("/")
+	@PostMapping("/{star_id}")
 	@Transactional
-	public ResponseEntity post(@RequestBody PlanetDTO planetDTO) {
+	public ResponseEntity post( @RequestBody PlanetDTO planetDTO) {
 		
 		try {
 			return ResponseEntity.status(HttpStatus.OK).body(planetService.post(planetDTO));

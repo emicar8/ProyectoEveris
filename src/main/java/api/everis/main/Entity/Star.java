@@ -3,6 +3,7 @@ package api.everis.main.Entity;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.OneToMany;
@@ -16,7 +17,7 @@ public class Star extends Base{
 	@Column(name = "star_density")
 	private int density;
 	
-	@OneToMany(mappedBy = "star")
+	@OneToMany(mappedBy = "star", cascade = CascadeType.ALL)
 	private List<Planet> planets = new ArrayList<>();
 	
 	public Star() {

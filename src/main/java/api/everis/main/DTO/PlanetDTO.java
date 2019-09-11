@@ -4,13 +4,15 @@ public class PlanetDTO extends BaseDTO{
 	
 	private String name;
 	private int size;
+	private StarDTO star;
 	
 	public PlanetDTO() {
 	}
 	
-	public PlanetDTO(String name, int size) {
+	public PlanetDTO(String name, int size, StarDTO star) {
 		this.name = name;
 		this.size = size;
+		this.star = star;
 	}
 	
 	public String getName() {
@@ -28,5 +30,15 @@ public class PlanetDTO extends BaseDTO{
 	public void setSize(int size) {
 		this.size = size;
 	}
+
+	public StarDTO getStar() {
+		return star;
+	}
+
+	public void setStar(StarDTO star) {
+		this.star = star;
+	}
+	
+	
 
 }
