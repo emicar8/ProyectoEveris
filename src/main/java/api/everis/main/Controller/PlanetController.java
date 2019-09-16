@@ -6,6 +6,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -30,6 +31,7 @@ public class PlanetController {
 	}
 	
 	@GetMapping("/{id}")
+	@CrossOrigin(origins = "*")
 	@Transactional
 	public ResponseEntity getOne(@PathVariable int id) {
 		
@@ -43,6 +45,7 @@ public class PlanetController {
 	}
 	
 	@GetMapping("/")
+	@CrossOrigin(origins = "*")
 	@Transactional
 	public ResponseEntity getAll() {
 		
@@ -56,6 +59,7 @@ public class PlanetController {
 	}
 	
 	@PostMapping("/{star_id}")
+	@CrossOrigin(origins = "*")
 	@Transactional
 	public ResponseEntity post( @RequestBody PlanetDTO planetDTO) {
 		
@@ -67,6 +71,7 @@ public class PlanetController {
 	}
 	
 	@PutMapping("/{id}")
+	@CrossOrigin(origins = "*")
 	@Transactional
 	public ResponseEntity put(@PathVariable int id, @RequestBody PlanetDTO planetDTO) {
 		
@@ -79,6 +84,7 @@ public class PlanetController {
 	}
 	
 	@DeleteMapping("/{id}")
+	@CrossOrigin(origins = "*")
 	@Transactional
 	public ResponseEntity delete(@PathVariable int id) {
 		
