@@ -38,7 +38,5 @@ public class PlanetDTO extends BaseDTO{
 	public void setStar(StarDTO star) {
 		this.star = star;
 	}
-	
-	
 
 }

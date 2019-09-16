@@ -21,9 +21,10 @@ public class Planet extends Base {
 	public Planet() {
 	}
 
-	public Planet(String name, int size) {
+	public Planet(String name, int size, Star star) {
 		this.name = name;
 		this.size = size;
+		this.star = star;
 	}
 
 	public String getName() {
@@ -41,6 +42,16 @@ public class Planet extends Base {
 	public void setSize(int size) {
 		this.size = size;
 	}
+
+	public Star getStar() {
+		return star;
+	}
+
+	public void setStar(Star star) {
+		this.star = star;
+	}
+	
+	
 	
 	
 	

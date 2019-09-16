@@ -44,4 +44,14 @@ public class Star extends Base{
 		this.density = density;
 	}
 
+	public List<Planet> getPlanets() {
+		return planets;
+	}
+
+	public void setPlanets(List<Planet> planets) {
+		this.planets = planets;
+	}
+	
+	
+
 }
