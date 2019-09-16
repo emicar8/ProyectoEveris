@@ -1,1 +1,16 @@
-<p>stars works!</p>
+<table class="table table-hover">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Name</th>
+            <th scope="col">Density</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor = "let star of stars">
+            <th scope="row">{{star.id}}</th>
+            <td>{{star.name}}</td>
+            <td>{{star.density}}</td>
+        </tr>
+    </tbody>
+</table>

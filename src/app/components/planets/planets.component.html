@@ -1,1 +1,18 @@
-<p>planets works!</p>
+<table class="table table-hover">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Name</th>
+                <th scope="col">Size</th>
+                <th scope="col">Star Name</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor = "let planet of planets">
+                <th scope="row">{{planet.id}}</th>
+                <td>{{planet.name}}</td>
+                <td>{{planet.size}}</td>
+                <td>{{planet.star.name}}</td>
+            </tr>
+        </tbody>
+    </table>

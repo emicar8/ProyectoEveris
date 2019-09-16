@@ -6,7 +6,7 @@ import { Star } from '../models/star';
 @Injectable({
   providedIn: 'root'
 })
-export class StarsService {
+export class StarService {
 
   private URL:string = "http://localhost:8080/api/v1/stars/";
 

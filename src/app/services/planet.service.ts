@@ -6,9 +6,9 @@ import { Planet } from '../models/planet';
 @Injectable({
   providedIn: 'root'
 })
-export class PlanetsService {
+export class PlanetService {
 
-  private URL : string = "http://localhost:8080/api/v1/planets";
+  private URL : string = "http://localhost:8080/api/v1/planets/";
 
   constructor(private http : HttpClient) { }
 
@@ -16,7 +16,7 @@ export class PlanetsService {
     return this.http.get<Planet>(this.URL + id);
   }
 
-  getAll(id : number) : Observable<Planet[]>{
+  getAll() : Observable<Planet[]>{
     return this.http.get<Planet[]>(this.URL);
   }
 

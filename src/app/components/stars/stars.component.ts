@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Star } from 'src/app/models/star';
+import { StarService } from 'src/app/services/star.service';
 
 @Component({
   selector: 'app-stars',
@@ -7,9 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class StarsComponent implements OnInit {
 
-  constructor() { }
+  stars : Star[] = [];
+
+  constructor(private starService : StarService) { }
 
   ngOnInit() {
+    this.starService.getAll().subscribe((data)=>{
+      this.stars = data;
+    })
   }
 
 }
