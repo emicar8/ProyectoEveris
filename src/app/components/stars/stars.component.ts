@@ -19,4 +19,12 @@ export class StarsComponent implements OnInit {
     })
   }
 
+  delete(id : number){
+    this.starService.delete(id).subscribe((data)=>{
+      location.reload();
+    });
+  }
+
+
+
 }

@@ -28,7 +28,7 @@ export class PlanetService {
     return this.http.put<Planet>(this.URL + id, planet);
   }
 
-  delete(id : number){
-    this.http.delete(this.URL + id);
+  delete(id : number) : Observable<any>{
+    return this.http.delete(this.URL + id);
   }
 }

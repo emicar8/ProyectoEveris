@@ -5,5 +5,4 @@ export class Star extends Base{
     
     name : string;
     density : number;
-    planets : Planet[] = [];
 }

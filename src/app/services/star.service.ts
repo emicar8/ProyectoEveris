@@ -28,7 +28,7 @@ export class StarService {
     return this.http.put<Star>(this.URL + id, star);
   }
 
-  delete(id : number){
-    this.http.delete(this.URL + id);
+  delete(id : number) : Observable<any>{
+    return this.http.delete(this.URL + id);
   }
 }

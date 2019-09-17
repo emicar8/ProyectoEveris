@@ -1,16 +1,35 @@
-<table class="table table-hover">
-    <thead class="thead-dark">
-        <tr>
-            <th scope="col">ID</th>
-            <th scope="col">Name</th>
-            <th scope="col">Density</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr *ngFor = "let star of stars">
-            <th scope="row">{{star.id}}</th>
-            <td>{{star.name}}</td>
-            <td>{{star.density}}</td>
-        </tr>
-    </tbody>
-</table>
+<br>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-2">
+            <button type="button" class="btn btn-success btn-block" [routerLink]="['/stars/' + 0]">New</button>
+        </div>
+
+    </div>
+</div>
+<br>
+<div class="container-fluid">
+    <table class="table table-hover">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Name</th>
+                <th scope="col">Density</th>
+                <th scope="col">Edit/Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let star of stars">
+                <th scope="row">{{star.id}}</th>
+                <td>{{star.name}}</td>
+                <td>{{star.density}}</td>
+                <td>
+                    <div class="btn-group" role="group" aria-label="Basic example">
+                        <button type="button" class="btn btn-warning" [routerLink]="['/stars/' + star.id]">Edit</button>
+                        <button type="button" class="btn btn-danger" (click)="delete(star.id)">Delete</button>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
