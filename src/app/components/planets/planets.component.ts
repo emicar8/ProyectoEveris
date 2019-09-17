@@ -19,4 +19,9 @@ export class PlanetsComponent implements OnInit {
     })
   }
 
+  delete(id : number){
+    this.planetService.delete(id).subscribe((data)=>{
+      location.reload();
+    });  
+  }
 }

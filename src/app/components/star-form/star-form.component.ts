@@ -11,14 +11,14 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class StarFormComponent implements OnInit {
 
   star: Star = {
-    id: null,
+    id: 0,
     name: null,
     density: null
   };
 
   constructor(private starService: StarService, private activatedRoute: ActivatedRoute, private router: Router) {
     this.activatedRoute.params.subscribe((data) => {
-      if (data.id != null) {
+      if (data.id != 0) {
         this.starService.getOne(data.id).subscribe((data2) => {
           this.star = data2;
         })
@@ -27,8 +27,8 @@ export class StarFormComponent implements OnInit {
   }
 
   save() {
-    if (this.star.id != null) {
-      this.starService.put(this.star.id,this.star).subscribe((data)=>{
+    if (this.star.id != 0) {
+      this.starService.put(this.star.id, this.star).subscribe((data)=>{
         location.reload();
       });
     }else {

@@ -13,7 +13,7 @@ import { StarService } from 'src/app/services/star.service';
 export class PlanetFormComponent implements OnInit {
 
   planet : Planet = {
-    id: null,
+    id: 0,
     name: null,
     size: null,
     star: null
@@ -25,9 +25,10 @@ export class PlanetFormComponent implements OnInit {
 
   constructor(private planetService : PlanetService, private starService : StarService, private activatedRoute : ActivatedRoute, private router : Router) { 
     this.activatedRoute.params.subscribe((data)=>{
-      if(data.id != null){
+      if(data.id != 0){
         this.planetService.getOne(data.id).subscribe((data2)=>{
           this.planet = data2;
+          document.getElementById("front").innerHTML = this.planet.star.name;
         });
       }
     });
@@ -42,7 +43,7 @@ export class PlanetFormComponent implements OnInit {
   }
 
   save(){
-    if(this.planet.id != null){
+    if(this.planet.id != 0){
       this.planetService.put(this.planet.id, this.planet).subscribe((data)=>{
         location.reload();
       });
