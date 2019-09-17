@@ -1,18 +1,37 @@
-<table class="table table-hover">
+<br>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-2">
+            <button type="button" class="btn btn-success btn-block" [routerLink]="['/planets/' + 0]">New</button>
+        </div>
+
+    </div>
+</div>
+<br>
+<div class="container-fluid">
+    <table class="table table-hover">
         <thead class="thead-dark">
             <tr>
                 <th scope="col">ID</th>
                 <th scope="col">Name</th>
                 <th scope="col">Size</th>
-                <th scope="col">Star Name</th>
+                <th scope="col">Star</th>
+                <th scope="col">Edit/Delete</th>
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor = "let planet of planets">
+            <tr *ngFor="let planet of planets">
                 <th scope="row">{{planet.id}}</th>
                 <td>{{planet.name}}</td>
                 <td>{{planet.size}}</td>
                 <td>{{planet.star.name}}</td>
+                <td>
+                    <div class="btn-group" role="group" aria-label="Basic example">
+                        <button type="button" class="btn btn-warning" [routerLink]="['/planets/' + planet.id]">Edit</button>
+                        <button type="button" class="btn btn-danger" (click)="delete(planet.id)">Delete</button>
+                    </div>
+                </td>
             </tr>
         </tbody>
     </table>
+</div>

@@ -1,17 +1,22 @@
-<form>
-    <div class="form-group">
-        <label>ID</label>
-        <input type="text" name="id" disabled class="form-control" [(ngModel)]="star.id" placeholder="ID not yet assigned">
-        <small id="emailHelp" class="form-text text-muted">This value is assigned automatically</small>
-    </div>
-    <div class="form-group">
+<div class="container-fluid">
+    <br>
+    <form>
+        <div class="form-group">
+            <label>ID</label>
+            <input type="text" name="id" disabled class="form-control" [(ngModel)]="star.id"
+                placeholder="ID not yet assigned">
+            <small id="emailHelp" class="form-text text-muted">This value is assigned automatically</small>
+        </div>
+        <div class="form-group">
             <label>Name</label>
             <input type="text" name="name" class="form-control" [(ngModel)]="star.name" placeholder="Enter star name">
         </div>
         <div class="form-group">
             <label>Density</label>
-            <input type="text" name="density" class="form-control" [(ngModel)]="star.density" placeholder="Enter star density">
+            <input type="text" name="density" class="form-control" [(ngModel)]="star.density"
+                placeholder="Enter star density">
         </div>
         <button type="button" class="btn btn-success" (click)="save()">Save</button>
         <button type="button" class="btn btn-danger" [routerLink]="['/stars']">Return</button>
-</form>
+    </form>
+</div>

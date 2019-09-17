@@ -1,1 +1,37 @@
-<p>planet-form works!</p>
+<div class="container-fluid">
+    <br>
+    <form>
+        <div class="form-group">
+            <label>ID</label>
+            <input type="text" name="id" disabled class="form-control" [(ngModel)]="planet.id"
+                placeholder="ID not yet assigned">
+            <small id="emailHelp" class="form-text text-muted">This value is assigned automatically</small>
+        </div>
+        <div class="form-group">
+            <label>Name</label>
+            <input type="text" name="name" class="form-control" [(ngModel)]="planet.name"
+                placeholder="Enter planet name">
+        </div>
+        <div class="form-group">
+            <label>Density</label>
+            <input type="text" name="density" class="form-control" [(ngModel)]="planet.size"
+                placeholder="Enter star density">
+        </div>
+        <div class="form-group">
+            <label>Star</label>
+                <div class="dropdown">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" id="Select Star"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <span id="front">
+                                    Select Star
+                            </span>
+                        </button>
+                        <div class="dropdown-menu">
+                            <button class="dropdown-item" *ngFor="let star of stars" (click)="onClick(star)">{{star.name}}</button>
+                        </div>
+                    </div>
+        </div>
+        <button type="button" class="btn btn-success" (click)="save()">Save</button>
+        <button type="button" class="btn btn-danger" [routerLink]="['/planets']">Return</button>
+    </form>
+</div>
