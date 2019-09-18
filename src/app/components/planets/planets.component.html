@@ -1,4 +1,6 @@
 <br>
+<h2 class=" display-4 text-center">Planets</h2>
+<br>
 <div class="container-fluid">
     <div class="row">
         <div class="col-2">
@@ -26,7 +28,7 @@
                 <td>{{planet.size}}</td>
                 <td>{{planet.star.name}}</td>
                 <td>
-                    <div class="btn-group" role="group" aria-label="Basic example">
+                    <div class="btn-group" role="group">
                         <button type="button" class="btn btn-warning" [routerLink]="['/planets/' + planet.id]">Edit</button>
                         <button type="button" class="btn btn-danger" (click)="delete(planet.id)">Delete</button>
                     </div>

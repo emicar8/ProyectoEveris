@@ -5,4 +5,8 @@ export class Star extends Base{
     
     name : string;
     density : number;
+
+    constructor(){
+        super();
+    }
 }

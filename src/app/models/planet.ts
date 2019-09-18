@@ -6,4 +6,8 @@ export class Planet extends Base{
     name : string;
     size : number;
     star : Star;
+
+    constructor(){
+        super();
+    }
 }
