@@ -2,6 +2,7 @@ package api.everis.main.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.NoSuchElementException;
 import java.util.Optional;
 
 import javax.transaction.Transactional;
@@ -17,11 +18,11 @@ import api.everis.main.Repository.PlanetRepository;
 public class PlanetService {
 	
 	private PlanetRepository planetRepository;
-
+	
 	public PlanetService(PlanetRepository planetRepository) {
 		this.planetRepository = planetRepository;
 	}
-	
+
 	@Transactional
 	public PlanetDTO getOne(int id) throws Exception {
 		

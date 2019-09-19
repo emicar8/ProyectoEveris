@@ -39,7 +39,7 @@ public class StarController {
 			StarDTO starDTO = starService.getOne(id);
 			return ResponseEntity.status(HttpStatus.OK).body(starDTO);
 		}catch(Exception e) {
-			return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("{\"message\": \"Error. Please check the ID, and try again later.\"}");
+			return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("");
 		}
 		
 	}
@@ -53,7 +53,7 @@ public class StarController {
 			List<StarDTO> arrayStarDTO = starService.getAll();
 			return ResponseEntity.status(HttpStatus.OK).body(arrayStarDTO);
 		}catch(Exception e) {
-			return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("{\"message\": \"Error. Please try again later.\"}");
+			return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("");
 		}
 		
 	}
@@ -66,7 +66,7 @@ public class StarController {
 		try {
 			return ResponseEntity.status(HttpStatus.OK).body(starService.post(starDTO));
 		}catch(Exception e) {
-			return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("{\"message\": \"Error. Please check the BODY request, and try again later.\"}");
+			return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("");
 		}
 	}
 	
@@ -78,7 +78,7 @@ public class StarController {
 		try {
 			return ResponseEntity.status(HttpStatus.OK).body(starService.put(id, starDTO));
 		}catch(Exception e) {
-			return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("{\"message\": \"Error. Please check the ID or BODY request, and try again later.\"}");
+			return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("");
 		}
 		
 	}
@@ -92,7 +92,7 @@ public class StarController {
 			starService.delete(id);
 			return ResponseEntity.status(HttpStatus.NO_CONTENT).body("");
 		}catch(Exception e) {
-			return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("{\"message\": \"Error. Please check the ID, and try again later.\"}");
+			return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("");
 		}
 	}
 
