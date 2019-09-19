@@ -39,7 +39,7 @@ public class PlanetController {
 			PlanetDTO planetDTO = planetService.getOne(id);
 			return ResponseEntity.status(HttpStatus.OK).body(planetDTO);
 		}catch(Exception e) {
-			return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("");
+			return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("{\"message\": \"Error. Please try again later.\"}");
 		}
 		
 	}
@@ -53,7 +53,7 @@ public class PlanetController {
 			List<PlanetDTO> arrayPlanetDTO = planetService.getAll();
 			return ResponseEntity.status(HttpStatus.OK).body(arrayPlanetDTO);
 		}catch(Exception e) {
-			return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("");
+			return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("{\"message\": \"Error. Please check the ID, and try again later.\"}");
 		}
 		
 	}
@@ -66,7 +66,7 @@ public class PlanetController {
 		try {
 			return ResponseEntity.status(HttpStatus.OK).body(planetService.post(planetDTO));
 		}catch(Exception e) {
-			return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("");
+			return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("{\"message\": \"Error. Please check the BODY request, and try again later.\"}");
 		}
 	}
 	
@@ -78,7 +78,7 @@ public class PlanetController {
 		try {
 			return ResponseEntity.status(HttpStatus.OK).body(planetService.put(id, planetDTO));
 		}catch(Exception e) {
-			return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("");
+			return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("{\"message\": \"Error. Please check the ID or BODY request, and try again later.\"}");
 		}
 		
 	}
@@ -92,7 +92,7 @@ public class PlanetController {
 			planetService.delete(id);
 			return ResponseEntity.status(HttpStatus.NO_CONTENT).body("");
 		}catch(Exception e) {
-			return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("");
+			return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("{\"message\": \"Error. Please check the ID or BODY request, and try again later.\"}");
 		}
 	}
 
