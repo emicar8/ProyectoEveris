@@ -28,7 +28,10 @@
                 <label>Density</label>
                 <input type="text" class="form-control" formControlName="starDensity" placeholder="Enter star density"
                     required>
-                    <div class="alert alert-danger" *ngIf="starDensity.invalid && (starDensity.dirty || starDensity.touched)">Size is required</div>    
+                    <div *ngIf="starDensity.errors && (starDensity.dirty || starDensity.touched)">
+                        <div class="alert alert-danger" *ngIf="starDensity.errors.required ">Density is required</div>
+                        <div class="alert alert-danger" *ngIf="starDensity.errors.pattern">Density must only be a number</div>   
+                    </div>
             </div>
     
             <button type="submit" class="btn btn-success col-2" [disabled]="!starForm.valid">Save</button>

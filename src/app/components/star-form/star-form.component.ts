@@ -18,13 +18,13 @@ export class StarFormComponent implements OnInit {
   };
 
   starForm: FormGroup = this.formBuilder.group({
-    starId: [{value: null, disabled: true}],
+    starId: [{ value: null, disabled: true }],
     starName: [null, Validators.required],
-    starDensity: [null, Validators.required]
+    starDensity: [null, [Validators.required, Validators.pattern('^[0-9]*$')]]
   });
 
-  constructor(private starService: StarService, private activatedRoute: ActivatedRoute, 
-    private router: Router, private formBuilder : FormBuilder) {
+  constructor(private starService: StarService, private activatedRoute: ActivatedRoute,
+    private router: Router, private formBuilder: FormBuilder) {
 
   }
 
@@ -49,13 +49,13 @@ export class StarFormComponent implements OnInit {
 
     if (this.star.id != 0) {
       this.star.id = this.starForm.get("starId").value;
-      this.starService.put(this.star.id, this.star).subscribe((data)=>{
+      this.starService.put(this.star.id, this.star).subscribe((data) => {
         location.reload();
       });
-    }else {
+    } else {
       this.star.id = 0;
-      this.starService.post(this.star).subscribe((data)=>{
-        this.router.navigate(['/stars/'+ data.id]);
+      this.starService.post(this.star).subscribe((data) => {
+        this.router.navigate(['/stars/' + data.id]);
       });
     }
   }
@@ -66,5 +66,5 @@ export class StarFormComponent implements OnInit {
 
   get starName() { return this.starForm.get("starName") }
 
-  get starDensity() { return this.starForm.get("starDensity") }  
+  get starDensity() { return this.starForm.get("starDensity") }
 }

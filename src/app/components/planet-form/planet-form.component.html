@@ -1,50 +1,3 @@
-<!--
-<div class="container-fluid">
-    <br>
-    <form data-toggle="validator" role="form">
-
-        <div class="form-group">
-            <label>ID</label>
-            <input type="text" name="id" disabled class="form-control" [(ngModel)]="planet.id"
-                placeholder="ID not yet assigned">
-            <small id="idHelp" class="form-text text-muted">This value is assigned automatically</small>
-        </div>
-
-        <div class="form-group">
-            <label for="inputName" class="control-label">Name</label>
-            <input type="text" name="inputName" class="form-control" [(ngModel)]="planet.name" placeholder="Enter planet name" required>
-        </div>
-
-        <div class="form-group">
-            <label>Density</label>
-            <input type="text" name="size" class="form-control" [(ngModel)]="planet.size"
-                placeholder="Enter planet size">
-        </div>
-
-        <div class="form-group">
-            <label>Star</label>
-            <div class="dropdown">
-                <button class="btn btn-secondary dropdown-toggle" type="button" id="Select Star" data-toggle="dropdown"
-                    aria-haspopup="true" aria-expanded="false">
-                    <span id="front">
-                        Select Star
-                    </span>
-                </button>
-                <div class="dropdown-menu">
-                    <button class="dropdown-item" *ngFor="let star of stars"
-                        (click)="onClick(star)">{{star.name}}</button>
-                </div>
-            </div>
-        </div>
-
-        <div class="form-group">
-            <button type="submit" class="btn btn-default" (click)="save()">Save</button>
-            <button type="button" class="btn btn-danger" [routerLink]="['/planets']">Return</button>
-        </div>
-
-    </form>
-</div>
--->
 <div class="container">
     <br>
     <div *ngIf="planet.id != 0; else add">
@@ -65,7 +18,6 @@
         </div>
 
         <div class="form-group">
-            
             <label>Name</label>
             <input type="text" class="form-control" formControlName="planetName" placeholder="Enter planet name"
                 required>
@@ -76,7 +28,10 @@
             <label>Size</label>
             <input type="text" class="form-control" formControlName="planetSize" placeholder="Enter planet size"
                 required>
-                <div class="alert alert-danger" *ngIf="planetSize.invalid && (planetSize.dirty || planetSize.touched)">Size is required</div>    
+                <div *ngIf="planetSize.errors && (planetSize.dirty || planetSize.touched)">
+                    <div class="alert alert-danger" *ngIf="planetSize.errors.required">Size is required</div>
+                    <div class="alert alert-danger" *ngIf="planetSize.errors.pattern">Size must be a number</div>
+                </div>                   
         </div>
 
         <div class="form-group">
@@ -88,11 +43,8 @@
             <div class="alert alert-danger" *ngIf="planetStar.invalid && (planetStar.dirty || planetStar.touched)">Star is required</div>
         </div>
 
-
         <button type="submit" class="btn btn-success col-2" [disabled]="!planetForm.valid">Save</button>
         <button type="button" class="btn btn-danger col-2" [routerLink]="['/planets']">Return</button>
-
-
 
     </form>
 </div>

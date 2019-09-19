@@ -25,7 +25,7 @@ export class PlanetFormComponent implements OnInit {
   planetForm: FormGroup = this.formBuilder.group({
     planetId: [{ value: null, disabled: true }],
     planetName: [null, Validators.required],
-    planetSize: [null, Validators.required],
+    planetSize: [null, [Validators.required, Validators.pattern('^[0-9]*$')]],
     planetStar: [null, Validators.required]
   });
 
