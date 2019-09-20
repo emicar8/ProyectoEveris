@@ -35,6 +35,11 @@ export class PlanetFormComponent implements OnInit {
   }
 
   ngOnInit() {
+
+    this.starService.getAll().subscribe((data) => {
+      this.stars = data;
+    });
+
     this.activatedRoute.params.subscribe((data) => {
       if (data.id != 0) {
         this.planetService.getOne(data.id).subscribe((data2) => {
@@ -47,10 +52,6 @@ export class PlanetFormComponent implements OnInit {
       }
     });
 
-    this.starService.getAll().subscribe((data) => {
-      this.stars = data;
-    });
-
   }
 
   onSubmit() {
@@ -59,7 +60,12 @@ export class PlanetFormComponent implements OnInit {
 
     this.planet.name = this.planetForm.get("planetName").value;
     this.planet.size = this.planetForm.get("planetSize").value;
-    this.planet.star = this.stars[this.planetForm.get("planetStar").value - 1];
+    for(let singleStar of this.stars ){
+      if(singleStar.id == this.planetForm.get("planetStar").value){
+        this.planet.star = singleStar;
+      }
+    }
+    
 
     if (this.planet.id != 0) {
       this.planet.id = this.planetForm.get("planetId").value;
